@@ -1,6 +1,6 @@
 # Patient Registration & Telemedicine Architecture (KPPMCH)
 
-**70–80% Registration Time Reduction | PDPA-Compliant | Municipal-Scale Deployment**
+**70–80% Registration Efficiency Gain | PDPA-Compliant | Municipal-Scale Deployment**
 
 A high-performance, serverless registration framework and telemedicine platform engineered to bridge the gap between public healthcare intake and internal clinical workflows via real-time data synchronization.
 
@@ -23,8 +23,9 @@ The architecture adheres to **Serverless Principles**, prioritizing horizontal s
 ### 🔄 Architectural Flow (Sequential Ingestion)
 ```mermaid
 graph TD
-    User[Client-Side / Mobile] -->|HTTPS/TLS 1.3| Vercel[Next.js Edge Runtime]
-    Vercel -->|Payload Validation| GAS[Serverless Middleware - Google Apps Script]
-    GAS -->|Atomic Write / ACID| DB[(Cloud Persistence Layer)]
-    DB -->|Webhook Trigger| Notify[LINE Messaging Gateway]
-    Notify -->|Push Notification| Nursing[Clinical Triage Interface]
+    User[Patient / User] -->|1. Interaction| LINE_In[LINE Messaging API]
+    LINE_In -->|2. Redirect| WebApp[Next.js Application]
+    WebApp -->|3. Data Validation| API[RESTful API - Google Apps Script]
+    API -->|4. ACID Transaction| DB[(Cloud Persistence Layer)]
+    DB -->|5. Trigger Alert| Notify[LINE Messaging Gateway]
+    Notify -->|6. Triage Delivery| Nursing[LINE Flex Message Interface]
