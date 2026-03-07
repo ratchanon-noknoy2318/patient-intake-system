@@ -16,15 +16,15 @@ A high-performance, serverless registration framework and telemedicine platform 
 
 ---
 
-## 2. System Architecture & Data Flow
-The system employs a **Decoupled Serverless Pattern** to ensure high availability, low latency, and zero-infrastructure overhead. This architecture is purpose-built to handle high-concurrency registration events within a clinical environment.
+## 2. System Architecture & Design Philosophy
 
-### 🔄 Logical Data Flow
+The architecture adheres to **Serverless Principles**, prioritizing horizontal scalability and low operational overhead. By decoupling the ingestion layer from the persistence layer, the system ensures data integrity even during high-concurrency registration spikes.
+
+### 🔄 Architectural Flow (Sequential Ingestion)
 ```mermaid
 graph TD
-    A[Patient / User] -->|1. Interaction / Notification| B[LINE Messaging API]
-    B -->|2. Webhook / Redirect| C[Next.js Application]
-    C -->|3. Data Validation & Submission| D[RESTful API - Google Apps Script]
-    D -->|4. ACID Transaction| E[(Google Sheets Database)]
-    E -->|5. Real-time Update| F[Nursing Station / Clinical Staff]
-    F -->|6. Status Notification| B
+    User[Client-Side / Mobile] -->|HTTPS/TLS 1.3| Vercel[Next.js Edge Runtime]
+    Vercel -->|Payload Validation| GAS[Serverless Middleware - Google Apps Script]
+    GAS -->|Atomic Write / ACID| DB[(Cloud Persistence Layer)]
+    DB -->|Webhook Trigger| Notify[LINE Messaging Gateway]
+    Notify -->|Push Notification| Nursing[Clinical Triage Interface]
