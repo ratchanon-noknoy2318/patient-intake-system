@@ -28,4 +28,4 @@ graph TD
     WebApp -->|3. Data Validation| API[RESTful API - Google Apps Script]
     API -->|4. ACID Transaction| DB[(Cloud Persistence Layer)]
     DB -->|5. Trigger Alert| Notify[LINE Messaging Gateway]
-    Notify -->|6. Triage Delivery| Nursing[LINE Flex Message Interface]
+    Notify -->|6. Nurse Notification| Nursing[LINE Flex Message Interface]
