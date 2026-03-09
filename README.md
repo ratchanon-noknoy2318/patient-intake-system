@@ -15,42 +15,30 @@ The platform implements a **Stateless Layered Architecture** to ensure high avai
 
 ```mermaid
 graph TD
-    %% Layer 1: Access Tier
-    subgraph Access_Tier [1. Client Access Layer]
-        User([Patient / User]) -->|HTTPS / TLS 1.3| WebApp[Next.js App Router]
-        WebApp -->|Zod Schema Validation| WebApp
-    end
+    %% Define Nodes
+    Patient([Patient / User])
+    NextJS[Next.js App Router]
+    API{Serverless API Gateway}
+    GSheet[(Google Sheets DB)]
+    Nurse([Senior Nurse])
 
-    %% Layer 2: Logic Tier
-    subgraph Logic_Tier [2. Serverless Gateway & Logic]
-        WebApp -->|JSON Payload| API{API Gateway}
-        
-        %% Search Path
-        API -->|READ Request| Search[Appointment Lookup Engine]
-        
-        %% Mutation Path
-        API -->|WRITE Request| Ingest[Clinical Ingestion Logic]
-        Ingest -->|Data Normalization| Ingest
-    end
+    %% 1. Input Phase
+    Patient -->|1. Submit or Search| NextJS
+    NextJS -->|Zod Validation| API
 
-    %% Layer 3: Persistence Tier
-    subgraph Data_Tier [3. Distributed Persistence]
-        Search <-->|Index Scan| DB[(Google Sheets / Ledger)]
-        Ingest -->|Atomic Transaction| DB
-        DB ---|Audit Logging| Log[System Traceability]
-    end
+    %% 2. Processing Phase (Dual Path)
+    API -->|2a. Search Query| GSheet
+    GSheet -.->|Return Appointment| API
 
-    %% Layer 4: Clinical Tier
-    subgraph Delivery_Tier [4. Event-Driven Dispatch]
-        Ingest -->|Post-Commit Webhook| LineAPI[Messaging Gateway]
-        LineAPI -->|Structured Flex Message| Nurse([Senior Nursing Staff])
-    end
+    API -->|2b. Atomic Register| GSheet
 
-    %% Architectural Aesthetic Styling
-    style User fill:#f9f9f9,stroke:#333
+    %% 3. Output Phase
+    API -->|3. Display Result| NextJS
+    API -->|4. Push Notification| Nurse
+
+    %% Styling
+    style Patient fill:#f9f9f9,stroke:#333
     style Nurse fill:#f9f9f9,stroke:#333
-    style WebApp fill:#fff,stroke:#000,stroke-width:2px
+    style NextJS fill:#fff,stroke:#000,stroke-width:2px
     style API fill:#000,color:#fff,stroke-width:2px
-    style DB fill:#fff,stroke:#000,stroke-dasharray: 5 5
-    style Search fill:#fff,stroke:#444,stroke-width:1px
-    style Ingest fill:#fff,stroke:#444,stroke-width:1px
+    style GSheet fill:#fff,stroke:#000,stroke-dasharray: 5 5
