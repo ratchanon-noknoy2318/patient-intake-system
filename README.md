@@ -1,44 +1,30 @@
-# Telemedicine & Registration Infrastructure (KPPMCH)
+# Telemedicine Intake System
+**High-efficiency patient data acquisition and screening platform using Google Sheets.**
 
-**Municipal-Scale Distributed Engine | Event-Driven Workflow | 80% Triage Efficiency Gain**
+## Overview
+The Telemedicine Intake System is engineered to eliminate manual bottlenecks in patient registration. By digitizing the initial intake process, the system ensures that healthcare providers receive structured clinical data and signed consents before the consultation begins, reducing administrative latency and improving data accuracy.
 
-A high-concurrency, asynchronous healthcare framework engineered to bridge public intake and clinical decision-making through a resilient serverless architecture.
+## Architecture
 
-[![Next.js](https://img.shields.io/badge/Frontend-Next.js-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![Status](https://img.shields.io/badge/Status-Production_Verified-green?style=flat-square)](https://telemedscheduler.vercel.app/)
+| Layer | Description |
+| :--- | :--- |
+| **Pattern** | Stateless Layered Architecture |
+| **Flow** | [User] -> [Frontend] -> [API] -> [Google Sheets] |
+| **Integrations** | Google Sheets API |
 
----
+## Tech Stack
 
-## 1. System Architecture Design
+| Component | Technology |
+| :--- | :--- |
+| **Frontend** | Next.js (App Router), TailwindCSS |
+| **Backend** | Node.js (REST APIs) |
+| **Database** | Google Sheets |
 
-The platform implements a **Stateless Layered Architecture** to ensure high availability and strictly enforced data consistency (ACID) across distributed environments.
+## Project Structure
 
-```mermaid
-graph TD
-    %% Define Nodes
-    Patient([Patient / User])
-    NextJS[Next.js App Router]
-    API{Serverless API Gateway}
-    GSheet[(Google Sheets DB)]
-    Nurse([Senior Nurse])
+| Directory | Description |
+| :--- | :--- |
+| `app/` | Core application logic, routing, UI components, and API handlers. |
 
-    %% 1. Input Phase
-    Patient -->|1. Submit or Search| NextJS
-    NextJS -->|Zod Validation| API
-
-    %% 2. Processing Phase (Dual Path)
-    API -->|2a. Search Query| GSheet
-    GSheet -.->|Return Appointment| API
-
-    API -->|2b. Atomic Register| GSheet
-
-    %% 3. Output Phase
-    API -->|3. Display Result| NextJS
-    API -->|4. Push Notification| Nurse
-
-    %% Styling
-    style Patient fill:#f9f9f9,stroke:#333
-    style Nurse fill:#f9f9f9,stroke:#333
-    style NextJS fill:#fff,stroke:#000,stroke-width:2px
-    style API fill:#000,color:#fff,stroke-width:2px
-    style GSheet fill:#fff,stroke:#000,stroke-dasharray: 5 5
+## License
+Distributed under the MIT License.
