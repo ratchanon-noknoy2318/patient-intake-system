@@ -51,15 +51,17 @@ Designed and built a web-based intake system to digitize patient onboarding and 
 
 Patient submits intake form via web interface:
 
-Patient
-↓
-Next.js (Frontend + API Routes)
-↓
-Data Validation Layer
-↓
-Google Sheets (Storage)
-↓
-Healthcare Staff Review
+```
+[Patient]
+    ↓
+[Next.js (Frontend + API Routes)]
+    ↓
+[Data Validation Layer]
+    ↓
+[Google Sheets (Storage)]
+    ↓
+[Healthcare Staff Review]
+```
 
 ### Key Considerations
 
