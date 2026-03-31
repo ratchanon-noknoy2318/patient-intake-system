@@ -151,3 +151,8 @@ app/   Next.js application (UI, routing, API routes)
 ## References
 
 - Municipal announcement: https://www.kppmu.go.th/news-detail?hd=1&id=124000
+
+## Getting Started
+1. Clone the repo
+2. Install dependencies: npm install
+3. Run development server: npm run dev
