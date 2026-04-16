@@ -1,70 +1,62 @@
 # Telemedicine Intake System
 
-A production-grade web platform for automating patient intake and pre-consultation screening in telemedicine workflows.
+Production-grade telemedicine intake platform deployed in a real hospital, reducing patient intake workload by 80%.
 
-![Municipal Deployment](https://img.shields.io/badge/Deployment-Active%20in%20Kamphaeng%20Phet-brightgreen)  
+![System Screenshot](https://kppmch-register.vercel.app/og-image.png)
 
-Designed to streamline patient onboarding, reduce administrative overhead, and provide healthcare staff with structured patient data prior to consultations.
-
-Deployed and actively used in municipal healthcare operations in Kamphaeng Phet, Thailand.
+Live System: https://kppmch-register.vercel.app/PatientRegister  
+Deployment Reference: https://www.kppmu.go.th/news-detail?hd=1&id=124000  
 
 ---
 
 ## Overview
 
-The system digitizes and standardizes the telemedicine intake process, replacing manual, paper-based workflows with an automated, structured, and validation-driven pipeline.
+A production-ready web platform that digitizes and automates patient intake and pre-consultation workflows for telemedicine services.
 
-It enables:
-
-- Digital patient registration
-- Consent collection
-- Pre-consultation screening
-- Structured data access for healthcare staff
+The system replaces manual, paper-based processes with a structured, reliable, and scalable intake pipeline used in real municipal healthcare operations.
 
 ---
 
 ## Impact
 
-- Reduced patient intake workload by ~80%
-- Eliminated paper-based intake workflows
-- Improved data consistency and accuracy
-- Enabled faster and more efficient consultations
-- Successfully deployed in real-world municipal healthcare operations
+- 80% reduction in patient intake workload  
+- Eliminated paper-based workflows  
+- Improved data consistency and accuracy  
+- Accelerated pre-consultation processing time  
+- Deployed in live hospital operations  
 
 ---
 
 ## Problem
 
-Traditional telemedicine intake workflows relied on manual processes where healthcare staff had to:
+Traditional telemedicine intake workflows relied on manual processes:
 
-- Collect patient registration details manually  
-- Handle consent documentation  
-- Perform preliminary screening  
+- Paper-based registration and consent  
+- Manual data entry  
+- Inconsistent pre-consultation screening  
 
-This led to:
+Resulting in:
 
 - Operational bottlenecks  
-- Increased consultation latency  
-- Inconsistent and error-prone data  
-- High administrative burden on staff  
+- Delays in patient processing  
+- High administrative overhead  
+- Increased risk of human error  
 
 ---
 
 ## Solution
 
-A web-based intake system that digitizes and automates the entire onboarding workflow:
+Designed and implemented a centralized intake system that automates the entire onboarding workflow:
 
-- Online intake form for patients  
-- Input validation to ensure data quality  
-- Automated data collection pipeline  
-- Centralized structured storage  
-- Pre-consultation data access for healthcare staff  
+- Digital patient registration with structured forms  
+- Real-time validation for accurate data collection  
+- Automated data pipeline  
+- Centralized and accessible data storage  
+- Pre-consultation data availability for healthcare staff  
 
 ---
 
 ## Architecture
-
-Patient submits intake form via web interface:
 
 
 ```
@@ -72,87 +64,110 @@ Patient submits intake form via web interface:
     ↓
 [Next.js (Frontend + API Routes)]
     ↓
-[Data Validation Layer]
+[Validation Layer]
     ↓
 [Google Sheets (Storage)]
     ↓
-[Specialist Professional Nurse]
+[Healthcare Staff]
 ```
 
-
-
-### Design Considerations
-
-- Data validation enforced at submission to ensure clinical reliability  
-- Built based on real requirements from nursing staff  
-- Integrated seamlessly into existing healthcare workflows  
-- Optimized for usability by non-technical users  
-- Prioritized simplicity, reliability, and maintainability  
 
 ---
 
 ## Tech Stack
 
-**Frontend / Backend**
-- Next.js (App Router)
-- Node.js
+**Application Layer**
+- Next.js (App Router)  
+- Node.js  
 
 **Data Layer**
-- Google Sheets API
+- Google Sheets API  
 
 **UI**
-- TailwindCSS
+- TailwindCSS  
 
 ---
 
-## Architecture & Design Decisions
+## Engineering Decisions
 
 **Google Sheets as a data store**
-- Chosen for rapid deployment and accessibility
-- Eliminates need for complex database infrastructure
-- Allows non-technical stakeholders to inspect data directly
+- Enabled rapid deployment with minimal infrastructure  
+- Provided direct access for non-technical stakeholders  
+- Reduced system complexity  
 
 **Monolithic Next.js architecture**
-- Simplifies development and deployment
-- Reduces system complexity
-- Supports fast iteration cycles
+- Simplified development and deployment  
+- Supported rapid iteration cycles  
 
 **Form-driven workflow**
-- Aligns with clinical intake processes
-- Minimizes training requirements for users
-- Ensures consistent data structure
+- Aligned with real clinical intake processes  
+- Minimized training requirements  
+- Ensured structured and consistent data  
 
 ---
 
 ## Challenges
 
-- Handling unstructured and inconsistent user input  
-- Designing for non-technical healthcare users  
-- Ensuring data accuracy for clinical workflows  
-- Integrating with existing manual processes without disruption  
+- Handling inconsistent and unstructured user input  
+- Designing for non-technical healthcare staff  
+- Maintaining data accuracy for clinical usage  
+- Integrating into existing workflows without disruption  
 - Balancing simplicity with production reliability  
 
 ---
 
 ## Deployment
 
-The system is deployed and actively used in municipal telemedicine operations in Kamphaeng Phet, Thailand, supporting real-world patient intake and pre-consultation screening workflows.
+Deployed and actively used in municipal telemedicine operations in Kamphaeng Phet, Thailand.  
+The system supports real-world patient intake and pre-consultation workflows in a live healthcare environment.
 
 ---
 
-
 ## Project Structure
 
+
 ```
-app/   Next.js application (UI, routing, API routes)
+/app    → Next.js application (UI, routing, API routes)
 ```
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone <REPO_URL>
+cd <PROJECT_FOLDER>
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run development server
+
+```bash
+npm run dev
+```
+
 ---
 
 ## References
 
-- Municipal announcement: https://www.kppmu.go.th/news-detail?hd=1&id=124000
+* Municipal deployment reference: https://www.kppmu.go.th/news-detail?hd=1&id=124000
 
-## Getting Started
-1. Clone the repo
-2. Install dependencies: npm install
-3. Run development server: npm run dev
+---
+
+## Author
+
+**Ratchanon Noknoy**
+Software Engineer
+
+---
+
+## License
+
+MIT License © 2025–2026 Ratchanon Noknoy
