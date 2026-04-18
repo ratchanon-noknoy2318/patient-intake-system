@@ -3,9 +3,9 @@
 A production system for digitizing patient intake workflows in municipal healthcare operations.
 
 ## Impact
-- Reduced intake processing time from 24+ hours → under 1 hour
-- Used in live operations supporting 40K+ population
-- Delivered in 30 days (~฿9K budget)
+- Reduced intake processing time from 24+ hours → under 1 hour  
+- Used in live operations supporting 40K+ population  
+- Delivered in 30 days (~฿9K budget)  
 
 ## Overview
 A web-based system that replaces paper-based patient intake with a structured digital workflow.
@@ -20,5 +20,4 @@ Patient → Next.js → Validation → Google Sheets → Staff
 - TailwindCSS
 
 ## Links
-- Live System: https://kppmch-register.vercel.app/PatientRegister  
-- Deployment Reference: https://www.kppmu.go.th/news-detail?hd=1&id=124000
+- Deployed in Kamphaeng Phet Municipality healthcare operations: https://www.kppmu.go.th/news-detail?hd=1&id=124000
