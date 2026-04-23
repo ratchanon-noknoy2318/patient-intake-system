@@ -1,53 +1,81 @@
-# Patient Intake System 🏥
+# Patient Intake System
 
-A streamlined digital healthcare platform designed to automate patient registration and optimize clinical workflows. This system focuses on secure data collection, appointment management, and improving the overall patient experience while adhering to healthcare security standards.
+> A healthcare intake system designed to streamline patient registration and structured data collection in clinical workflows.
 
-## 🚀 Features
+---
 
-- **Patient Registration**: Secure onboarding for new patients with comprehensive medical history forms.
-- **Appointment Scheduling**: Real-time booking system for patients to schedule visits with doctors.
-- **Admin Dashboard**: Centralized management for healthcare staff to confirm, reschedule, or cancel appointments.
-- **Automated Notifications**: Integration for SMS or email alerts to confirm appointment details.
-- **Security & Privacy**: Built with PDPA standards in mind to ensure patient data governance and confidentiality.
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
+## 🚀 Getting Started
 
-## 🛠️ Tech Stack
+This guide will help you run the system locally.
 
-- **Frontend**: React, Next.js (App Router), Tailwind CSS
-- **Backend & Database**: Node.js, SQL (PostgreSQL/MySQL)
-- **Security**: PDPA Compliance, JWT Authentication
-- **Infrastructure**: Vercel, Git CI/CD
+### Prerequisites
+- Node.js (v16+)
+- npm or yarn
 
-## 📋 Installation
+### Installation
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com
-   cd patient-intake-system
-   ```
+git clone https://github.com/ratchanon-noknoy2318/patient-intake-system  
+cd patient-intake-system  
+npm install  
+npm start  
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+The application will run at:
 
-3. **Set up Environment Variables**:
-   Create a `.env` file in the root directory and add your credentials:
-   ```env
-   DATABASE_URL=your_database_url
-   NEXT_PUBLIC_API_KEY=your_api_key
-   ```
+http://localhost:3000
 
-4. **Run the development server**:
-   ```bash
-   npm run dev
-   ```
+---
 
-## 📈 Impact
+## 💡 System Overview
 
-- **Efficiency**: Designed to reduce patient registration latency by up to 80%.
-- **Capacity**: Built to handle high-volume databases exceeding 400,000+ patient records.
+Patient Intake System supports structured patient registration workflows in healthcare environments.
+
+The system handles:
+- Standardized patient data collection
+- Workflow-based intake processes
+- Front-desk registration flows
+- Structured data preparation for backend systems
+
+---
+
+## ✨ Features
+
+- Patient registration form with validation
+- Workflow-based intake process
+- Modular UI components
+- API-ready data structure design
+- Responsive interface for clinical use
+
+---
+
+## 🏗️ Architecture
+
+The system follows a simple layered structure:
+
+- UI Layer → Patient intake forms and interface components  
+- Application Layer → Form logic and workflow handling  
+- Data Layer → Structured payload preparation for backend systems  
+
+---
+
+## 🛠️ Built With
+
+- Node.js – runtime environment  
+- React – frontend UI framework  
+- REST API – data communication layer  
+- Git – version control  
+
+---
+
+## 📌 Use Case
+
+This system simulates real-world healthcare intake workflows such as:
+
+- Patient registration at clinics or hospitals  
+- OPD intake data collection  
+- Front-desk workflow automation support  
+
+---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+MIT License
