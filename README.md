@@ -17,7 +17,8 @@ Next.js • React • TailwindCSS
 ---
 
 ## Impact
-- Serving healthcare workflows for a 40,000+ population  
+- Serving 40,000+ users in a real-world healthcare environment  
+- Reduced manual processing by ~80% in patient intake workflows
 
 ---
 
