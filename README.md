@@ -1,4 +1,4 @@
-# Patient Intake System
+<h1 align="center">Patient Intake System</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Healthcare%20System-111111?style=flat-square" />
@@ -30,10 +30,9 @@ The system is used in a real-world healthcare environment to support patient reg
 
 <p align="left">
   <img src="https://img.shields.io/badge/Next.js-111111?style=flat-square&logo=next.js&logoColor=white" />
-  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/Google%20Apps%20Script-111111?style=flat-square&logo=google&logoColor=white" />
   <img src="https://img.shields.io/badge/TailwindCSS-111111?style=flat-square&logo=tailwindcss&logoColor=white" />
 </p>
-
 ---
 
 ## System Architecture
@@ -46,11 +45,11 @@ Patient → Intake Form → API Layer → Validation Layer → Database → Staf
 
 - Deployed in a real municipal healthcare environment
 - Supports over 40,000 users in operational usage
-- Reduced manual patient intake processing by approximately 80%
-- Improved consistency of structured clinical data collection
-
+- Reduced nurses’ manual patient intake workload by approximately 80%
+- Improved consistency and accuracy of structured clinical data collection
+- Achieved through workflow optimization and API-driven intake automation
 ---
-
+  
 ## Production Environment
 
 <img src="https://img.shields.io/badge/Production%20Use-111111?style=flat-square" />  
